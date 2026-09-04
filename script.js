@@ -70,8 +70,8 @@ function initNavigation() {
   }
 
   // Active section observer for nav link highlights
-  const sections = document.querySelectorAll('section[id]');
-  if ('IntersectionObserver' in window && sections.length > 0) {
+  const trackedSections = document.querySelectorAll('section#about, section#publications, section#projects, section#cv');
+  if ('IntersectionObserver' in window && trackedSections.length > 0) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -86,11 +86,11 @@ function initNavigation() {
         }
       });
     }, {
-      rootMargin: '-20% 0px -70% 0px',
-      threshold: 0
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0.1
     });
 
-    sections.forEach(sec => observer.observe(sec));
+    trackedSections.forEach(sec => observer.observe(sec));
   }
 }
 
@@ -109,8 +109,8 @@ function initScrollAnimations() {
         }
       });
     }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.08,
+      rootMargin: '0px 0px -30px 0px'
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
@@ -145,11 +145,16 @@ async function loadAllContent() {
     renderSkills(profileData.skills);
     renderPublications(articlesData);
     renderProjects(projectsData);
-    renderExperience(profileData.experience);
+    
+    // CV Sections
+    renderCVSummary(profileData);
     renderEducation(profileData.education);
+    renderExperience(profileData.experience);
     renderPresentations(profileData.presentations_and_workshops);
     renderAwards(profileData.awards);
+    renderProfessionalDevelopment(profileData.professional_development);
     renderMemberships(profileData.memberships);
+
     renderFooter(profileData);
 
   } catch (error) {
@@ -178,9 +183,14 @@ function renderHero(profile) {
 
   const heroPhoto = document.getElementById('hero-photo');
   const heroName = document.getElementById('hero-name');
+  const heroEyebrow = document.getElementById('hero-eyebrow');
   const heroLead = document.getElementById('hero-lead');
   const heroSocial = document.getElementById('hero-social');
   const navBrand = document.getElementById('nav-brand');
+
+  if (heroEyebrow) {
+    heroEyebrow.textContent = 'BIOINFORMATICIAN · GLOBAL HEALTH SECURITY RESEARCHER';
+  }
 
   if (personal.name) {
     if (heroName) heroName.textContent = personal.name;
@@ -347,7 +357,36 @@ function renderProjects(projects) {
   }).join('');
 }
 
-/** 5.5 Experience Section */
+/* ==========================================================================
+   6. CV Section Sub-Renderers
+   ========================================================================== */
+
+/** 6.1 Brief Bio / Summary */
+function renderCVSummary(profile) {
+  const summaryContent = document.getElementById('cv-summary-content');
+  if (!summaryContent || !profile) return;
+
+  const interest = profile.research_interest || '';
+  summaryContent.innerHTML = `
+    <p>${escapeHtml(interest)}</p>
+  `;
+}
+
+/** 6.2 Education Section */
+function renderEducation(educations) {
+  const timeline = document.getElementById('education-timeline');
+  if (!timeline || !Array.isArray(educations)) return;
+
+  timeline.innerHTML = educations.map(edu => `
+    <li class="timeline__item">
+      <span class="timeline__date">${escapeHtml(edu.period || '')}</span>
+      <h3 class="timeline__title">${escapeHtml(edu.degree || '')}</h3>
+      <p class="timeline__org">${escapeHtml(edu.institution || '')}</p>
+    </li>
+  `).join('');
+}
+
+/** 6.3 Experience Section */
 function renderExperience(experiences) {
   const timeline = document.getElementById('experience-timeline');
   if (!timeline || !Array.isArray(experiences)) return;
@@ -365,21 +404,7 @@ function renderExperience(experiences) {
   }).join('');
 }
 
-/** 5.6 Education Section */
-function renderEducation(educations) {
-  const timeline = document.getElementById('education-timeline');
-  if (!timeline || !Array.isArray(educations)) return;
-
-  timeline.innerHTML = educations.map(edu => `
-    <li class="timeline__item">
-      <span class="timeline__date">${escapeHtml(edu.period || '')}</span>
-      <h3 class="timeline__title">${escapeHtml(edu.degree || '')}</h3>
-      <p class="timeline__org">${escapeHtml(edu.institution || '')}</p>
-    </li>
-  `).join('');
-}
-
-/** 5.7 Presentations & Workshops Section */
+/** 6.4 Presentations & Workshops Section */
 function renderPresentations(presentations) {
   const list = document.getElementById('presentations-list');
   if (!list || !Array.isArray(presentations)) return;
@@ -408,7 +433,7 @@ function renderPresentations(presentations) {
   }).join('');
 }
 
-/** 5.8 Awards Section */
+/** 6.5 Awards Section */
 function renderAwards(awards) {
   const grid = document.getElementById('awards-grid');
   if (!grid || !Array.isArray(awards)) return;
@@ -422,7 +447,28 @@ function renderAwards(awards) {
   `).join('');
 }
 
-/** 5.9 Memberships Section */
+/** 6.6 Relevant Professional Development Section */
+function renderProfessionalDevelopment(profDevItems) {
+  const grid = document.getElementById('profdev-grid');
+  if (!grid || !Array.isArray(profDevItems)) return;
+
+  grid.innerHTML = profDevItems.map(item => {
+    const type = item.type || 'Course';
+    const isTraining = type.toLowerCase() === 'training';
+    const badgeClass = isTraining ? 'badge--training' : 'badge--course';
+
+    return `
+      <div class="profdev-card">
+        <div class="profdev-card__header">
+          <span class="badge ${badgeClass}">${escapeHtml(type)}</span>
+        </div>
+        <p class="profdev-card__title">${escapeHtml(item.title || '')}</p>
+      </div>
+    `;
+  }).join('');
+}
+
+/** 6.7 Memberships Section */
 function renderMemberships(memberships) {
   const list = document.getElementById('memberships-list');
   if (!list || !Array.isArray(memberships)) return;

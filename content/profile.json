@@ -165,5 +165,39 @@
             "issuer": "Faculty of Science, Federal University Otuoke",
             "date": "Dec 2022"
         }
+    ],
+    "professional_development": [
+        {
+            "type": "Course",
+            "title": "Professional Certification in Biosecurity, BlueDot Impact"
+        },
+        {
+            "type": "Course",
+            "title": "Nextflow for Genomics, Seqera"
+        },
+        {
+            "type": "Course",
+            "title": "Antimicrobial Databases and Genotype Prediction: Data Sharing and Analysis - Wellcome Connecting Science"
+        },
+        {
+            "type": "Training",
+            "title": "R Basics & Beyond: Intro to Data Analysis with R - The GRAPH Network"
+        },
+        {
+            "type": "Training",
+            "title": "Python Basics and Beyond - The GRAPH Network"
+        },
+        {
+            "type": "Course",
+            "title": "An Introduction to Linux, Bash Scripting, and R - Wellcome Connecting Science"
+        },
+        {
+            "type": "Course",
+            "title": "Research and Proposal writing in the Sciences – INASP Moodle online course"
+        },
+        {
+            "type": "Course",
+            "title": "Analysing and Interpreting Genomics Datasets – Wellcome Connecting Science"
+        }
     ]
 }

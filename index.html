@@ -48,10 +48,7 @@
         <a href="#about" class="nav__link is-active">About</a>
         <a href="#publications" class="nav__link">Publications</a>
         <a href="#projects" class="nav__link">Projects</a>
-        <a href="#experience" class="nav__link">Experience</a>
-        <a href="#education" class="nav__link">Education</a>
-        <a href="#workshops" class="nav__link">Workshops</a>
-        <a href="#awards" class="nav__link">Awards</a>
+        <a href="#cv" class="nav__link">CV</a>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark / light theme" title="Toggle theme">
           <span class="theme-toggle__icon" id="theme-icon">◐</span>
         </button>
@@ -62,12 +59,12 @@
   <!-- Main Content Container -->
   <main id="main-content">
     
-    <!-- Hero Section -->
+    <!-- 1. About / Hero Section -->
     <section class="hero section" id="about">
       <div class="hero__head">
         <img class="hero__photo" id="hero-photo" src="images/profile.png" alt="Chijioke Christopher Uhegwu" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'120\' fill=\'%23232838\'><rect width=\'120\' height=\'120\' rx=\'60\'/></svg>'" />
         <div class="hero__id">
-          <p class="hero__eyebrow" id="hero-eyebrow">Bioinformatician · Pathogen Genomics · Global Health</p>
+          <p class="hero__eyebrow" id="hero-eyebrow">BIOINFORMATICIAN · GLOBAL HEALTH SECURITY RESEARCHER</p>
           <h1 class="hero__title" id="hero-name">Chijioke Christopher Uhegwu</h1>
         </div>
       </div>
@@ -79,7 +76,7 @@
       </div>
     </section>
 
-    <!-- Skills & Focus Section -->
+    <!-- Skills & Methodologies Sub-section -->
     <section class="section reveal" id="skills-section">
       <h2 class="section__title">Skills &amp; Methodologies</h2>
       <div class="skills-grid" id="skills-container">
@@ -87,7 +84,7 @@
       </div>
     </section>
 
-    <!-- Publications Section -->
+    <!-- 2. Publications Section -->
     <section class="section reveal" id="publications">
       <h2 class="section__title">Publications</h2>
       <ul class="pub-list" id="publications-list">
@@ -98,7 +95,7 @@
       </p>
     </section>
 
-    <!-- Projects Section -->
+    <!-- 3. Projects Section -->
     <section class="section reveal" id="projects">
       <h2 class="section__title">Featured Projects</h2>
       <div class="projects-grid" id="projects-grid">
@@ -106,44 +103,69 @@
       </div>
     </section>
 
-    <!-- Experience Section -->
-    <section class="section reveal" id="experience">
-      <h2 class="section__title">Experience</h2>
-      <ol class="timeline" id="experience-timeline">
-        <!-- Injected via JavaScript -->
-      </ol>
-    </section>
-
-    <!-- Education Section -->
-    <section class="section reveal" id="education">
-      <h2 class="section__title">Education</h2>
-      <ol class="timeline" id="education-timeline">
-        <!-- Injected via JavaScript -->
-      </ol>
-    </section>
-
-    <!-- Presentations and Workshops Section -->
-    <section class="section reveal" id="workshops">
-      <h2 class="section__title">Presentations &amp; Workshops</h2>
-      <div class="presentation-list" id="presentations-list">
-        <!-- Injected via JavaScript -->
+    <!-- 4. Consolidated CV Section -->
+    <section class="section reveal" id="cv">
+      <div class="cv-header">
+        <h2 class="section__title">Curriculum Vitae</h2>
+        <div class="cv-badge">Academic &amp; Professional Record</div>
       </div>
-    </section>
 
-    <!-- Awards and Honors Section -->
-    <section class="section reveal" id="awards">
-      <h2 class="section__title">Awards &amp; Fellowships</h2>
-      <div class="awards-grid" id="awards-grid">
-        <!-- Injected via JavaScript -->
+      <!-- a. Brief Bio / Summary -->
+      <div class="cv-block" id="cv-summary-block">
+        <h3 class="cv-block__title">Summary &amp; Research Focus</h3>
+        <div class="callout" id="cv-summary-content">
+          <!-- Injected via JavaScript -->
+        </div>
       </div>
-    </section>
 
-    <!-- Professional Memberships Section -->
-    <section class="section reveal" id="memberships">
-      <h2 class="section__title">Memberships &amp; Affiliations</h2>
-      <div class="memberships-list" id="memberships-list">
-        <!-- Injected via JavaScript -->
+      <!-- b. Education -->
+      <div class="cv-block" id="cv-education-block">
+        <h3 class="cv-block__title">Education</h3>
+        <ol class="timeline" id="education-timeline">
+          <!-- Injected via JavaScript -->
+        </ol>
       </div>
+
+      <!-- c. Experience -->
+      <div class="cv-block" id="cv-experience-block">
+        <h3 class="cv-block__title">Experience</h3>
+        <ol class="timeline" id="experience-timeline">
+          <!-- Injected via JavaScript -->
+        </ol>
+      </div>
+
+      <!-- d. Workshops & Presentations -->
+      <div class="cv-block" id="cv-workshops-block">
+        <h3 class="cv-block__title">Workshops &amp; Presentations</h3>
+        <div class="presentation-list" id="presentations-list">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+
+      <!-- e. Awards & Honors -->
+      <div class="cv-block" id="cv-awards-block">
+        <h3 class="cv-block__title">Awards &amp; Fellowships</h3>
+        <div class="awards-grid" id="awards-grid">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+
+      <!-- f. Relevant Professional Development -->
+      <div class="cv-block" id="cv-profdev-block">
+        <h3 class="cv-block__title">Relevant Professional Development</h3>
+        <div class="profdev-grid" id="profdev-grid">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+
+      <!-- g. Memberships & Affiliations -->
+      <div class="cv-block" id="cv-memberships-block">
+        <h3 class="cv-block__title">Memberships &amp; Affiliations</h3>
+        <div class="memberships-list" id="memberships-list">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+
     </section>
 
   </main>

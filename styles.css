@@ -1,6 +1,6 @@
 /* ===========================================================================
    Chijioke Christopher Uhegwu — Personal Portfolio Stylesheet
-   Inspired by ahermann.org minimalist academic & researcher aesthetic.
+   Minimalist academic & researcher aesthetic inspired by ahermann.org.
    Dark default, light theme via [data-theme="light"].
    Inter for body & UI, JetBrains Mono for monospace accents & metadata.
    =========================================================================== */
@@ -20,6 +20,12 @@
   --badge-bg: rgba(45, 212, 191, 0.08);
   --badge-border: rgba(45, 212, 191, 0.2);
   --badge-text: #2dd4bf;
+  --badge-course-bg: rgba(56, 189, 248, 0.10);
+  --badge-course-border: rgba(56, 189, 248, 0.25);
+  --badge-course-text: #38bdf8;
+  --badge-training-bg: rgba(168, 85, 247, 0.10);
+  --badge-training-border: rgba(168, 85, 247, 0.25);
+  --badge-training-text: #c084fc;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
   --max: 780px;
@@ -44,6 +50,12 @@
   --badge-bg: rgba(13, 148, 136, 0.08);
   --badge-border: rgba(13, 148, 136, 0.2);
   --badge-text: #0d9488;
+  --badge-course-bg: rgba(2, 132, 199, 0.08);
+  --badge-course-border: rgba(2, 132, 199, 0.25);
+  --badge-course-text: #0284c7;
+  --badge-training-bg: rgba(147, 51, 234, 0.08);
+  --badge-training-border: rgba(147, 51, 234, 0.25);
+  --badge-training-text: #9333ea;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
@@ -113,12 +125,12 @@ a {
 .nav__links {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1.35rem;
 }
 
 .nav__link {
   font-family: var(--font-mono);
-  font-size: 0.84rem;
+  font-size: 0.86rem;
   font-weight: 500;
   color: var(--muted);
   transition: color 0.2s ease;
@@ -219,10 +231,11 @@ main {
   font-family: var(--font-mono);
   color: var(--accent);
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   font-size: 0.82rem;
   text-transform: uppercase;
   margin-bottom: 0.45rem;
+  line-height: 1.35;
 }
 
 .hero__title {
@@ -311,6 +324,7 @@ main {
   gap: 0.45rem;
 }
 
+/* ---- Badges ---- */
 .badge {
   display: inline-block;
   font-family: var(--font-mono);
@@ -328,6 +342,18 @@ main {
   background: var(--bg);
   border-color: var(--border);
   color: var(--muted);
+}
+
+.badge--course {
+  background: var(--badge-course-bg);
+  border: 1px solid var(--badge-course-border);
+  color: var(--badge-course-text);
+}
+
+.badge--training {
+  background: var(--badge-training-bg);
+  border: 1px solid var(--badge-training-border);
+  color: var(--badge-training-text);
 }
 
 /* ---- Publications Section ---- */
@@ -528,7 +554,71 @@ main {
   height: 0.95rem;
 }
 
-/* ---- Timelines (Experience & Education) ---- */
+/* ==========================================================================
+   Consolidated CV Section Styles
+   ========================================================================== */
+.cv-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cv-header .section__title {
+  margin-bottom: 0;
+}
+
+.cv-badge {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--muted);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+}
+
+.cv-block {
+  margin-bottom: 2.75rem;
+}
+
+.cv-block:last-child {
+  margin-bottom: 0;
+}
+
+.cv-block__title {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.03em;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.cv-block__title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ---- Callout / Summary Block ---- */
+.callout {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-dim);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.1rem 1.35rem;
+  color: var(--text);
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+/* ---- Timelines (Education & Experience) ---- */
 .timeline {
   list-style: none;
   position: relative;
@@ -702,6 +792,43 @@ main {
   color: var(--muted);
 }
 
+/* ---- Relevant Professional Development Grid ---- */
+.profdev-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 0.85rem;
+}
+
+.profdev-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.05rem 1.2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.profdev-card:hover {
+  border-color: var(--border-focus);
+  transform: translateY(-1px);
+}
+
+.profdev-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profdev-card__title {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.45;
+}
+
 /* ---- Memberships List ---- */
 .memberships-list {
   display: grid;
@@ -835,7 +962,7 @@ main {
     height: 88px;
   }
 
-  .projects-grid {
+  .projects-grid, .profdev-grid {
     grid-template-columns: 1fr;
   }
 }
