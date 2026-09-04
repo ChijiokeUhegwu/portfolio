@@ -1,0 +1,169 @@
+{
+    "personal": {
+        "name": "Chijioke Christopher Uhegwu",
+        "thumbnail": "/images/profile.png",
+        "email": "chijiokeuhegwu@gmail.com",
+        "social": {
+            "github": "https://www.github.com/ChijiokeUhegwu",
+            "linkedin": "https://www.linkedin.com/in/chijiokeuhegwu/",
+            "google_scholar": "https://scholar.google.com/citations?user=FtcUfAkAAAAJ&hl=en"
+        }
+    },
+    "research_interest": "My research interests lie at the intersection of pathogen genomics, infectious disease epidemiology, and global health security. I am interested in using genomic and computational approaches to investigate pathogen evolution, transmission, and emergence, and to strengthen genomic surveillance, early detection, and pandemic preparedness. I also have a strong interest in biosecurity, and the responsible governance of biological research, including dual-use risks, with a focus on strengthening pathogen detection and response capacity in resource-limited settings.",
+    "education": [
+        {
+            "institution": "Federal University Otuoke, Bayelsa State, Nigeria",
+            "degree": "Bachelor of Science (Honors) in Microbiology",
+            "period": "Nov 2018 - Dec 2023"
+        }
+    ],
+    "experience": [
+        {
+            "role": "Bioinformatician & Head of Capacity Building Programs",
+            "organization": "Genomac Institute Inc.",
+            "location": "Ogbomoso, Oyo State, Nigeria",
+            "period": "June 2024 - Present",
+            "summary": "Lead bioinformatics research, pathogen genomic surveillance activities, and institutional capacity-building programs, with a focus on infectious diseases, antimicrobial resistance, and genomic data analysis."
+        },
+        {
+            "role": "Graduate Teaching Assistant",
+            "organization": "Federal University Otuoke",
+            "location": "Bayelsa State, Nigeria",
+            "period": "Nov 2023 - May 2024",
+            "summary": "Assisted faculty in delivering lectures and practical lab sessions on bacteriology and microbial physiology while reviewing student research proposals."
+        },
+        {
+            "role": "Genomic Epidemiologist (Intern)",
+            "organization": "HackBio",
+            "location": "Remote",
+            "period": "Aug 2024 - Dec 2024",
+            "summary": "Designed scalable NGS Bash analysis pipelines and analyzed global cholera outbreak data using R."
+        }
+    ],
+    "skills": {
+        "bioinformatics": [
+            "R (tidyverse, Bioconductor, phyloseq)",
+            "Python (Biopython, Pandas, NumPy, Plotly)",
+            "Bash/Linux",
+            "Nextflow",
+            "RNA-seq",
+            "Whole-Genome Sequencing",
+            "Metagenomics",
+            "Phylogenetics",
+            "QIIME2",
+            "AMRFinderPlus"
+        ],
+        "laboratory": [
+            "Microbial culture",
+            "DNA extraction",
+            "PCR amplification",
+            "Antimicrobial Susceptibility Testing (Kirby-Bauer)",
+            "Gel electrophoresis"
+        ],
+        "data_and_viz": [
+            "Plotly",
+            "Quarto",
+            "Microsoft Power BI",
+            "Statistical Analysis"
+        ],
+        "domain_knowledge": [
+            "Pathogen Surveillance",
+            "Biosecurity & Pandemic Preparedness",
+            "One Health & AMR Governance"
+        ]
+    },
+    "presentations_and_workshops": [
+        {
+            "role": "Presenter",
+            "type": "Oral Paper Presentation",
+            "title": "Prevalence and molecular characterization of multidrug-resistant Staphylococcus species in a healthcare setting",
+            "event": "International Conference on Health Advances, Innovation and Research (ICHAIR)",
+            "location": "Nigerian Institute of Medical Research (NIMR), Lagos State, Nigeria",
+            "date": "29th November 2024"
+        },
+        {
+            "role": "Co-Author",
+            "type": "Poster Presentation",
+            "title": "Detection of multidrug resistance genes in bacterial isolates from the palms of healthcare workers in a hospital setting",
+            "event": "30th Molecular Microbial Ecology Group 2024 Conference",
+            "location": "University of Southampton, United Kingdom",
+            "date": "16th December 2024"
+        },
+        {
+            "role": "Facilitator",
+            "type": "Virtual Workshop",
+            "title": "Viral Genomics: From Raw NGS Data to Public Health Applications",
+            "event": "4-week practical training organized by Genomac Institute",
+            "location": "Virtual",
+            "date": "2nd June – 10th July 2025"
+        },
+        {
+            "role": "Facilitator",
+            "type": "Hands-on Workshop",
+            "title": "Where Biology Meets Technology: Transforming Data into Discovery",
+            "event": "3-Day Bioinformatics and Genomics workshop organized by American Society for Microbiology & Triad Institute for Health Research and Development",
+            "location": "Nigeria",
+            "date": "24th July – 26th July 2025"
+        },
+        {
+            "role": "Facilitator",
+            "type": "Hands-on Workshop",
+            "title": "Genomics Analysis and Data Interpretation for Evolutionary Studies",
+            "event": "2-Day workshop at Federal Polytechnic Nekede",
+            "location": "Owerri, Imo State, Nigeria",
+            "date": "13th March – 14th March 2025"
+        },
+        {
+            "role": "Facilitator (2 Cohorts)",
+            "type": "Virtual Workshop Series",
+            "title": "Basic to Advanced Bioinformatics Training for AMR and Metagenomics Research",
+            "event": "3-month virtual workshop organized by NextGen Public Health Advocacy Initiative",
+            "location": "Africa-wide",
+            "date": "Feb – June 2025, March – July 2026"
+        }
+    ],
+    "memberships": [
+        {
+            "role": "Member",
+            "organization": "Bioinformatic Pipelines and Visualization Working Group - Public Health Alliance for Genomic Epidemiology (PHA4GE)"
+        },
+        {
+            "role": "Global Outreach Member",
+            "organization": "American Society for Microbiology (ASM)"
+        },
+        {
+            "role": "Member",
+            "organization": "Nigerian Society for Microbiology (NSM)"
+        },
+        {
+            "role": "Member",
+            "organization": "International Association for Public Health Logisticians (IAPHL)"
+        },
+        {
+            "role": "Member",
+            "organization": "Global Health Focus"
+        }
+    ],
+    "awards": [
+        {
+            "title": "BWC GRAPH Network Fellow",
+            "issuer": "UNODA / University of Geneva",
+            "date": "May 2026, April 2025"
+        },
+        {
+            "title": "Africa Healthcare Innovation Fellowship (AHIF)",
+            "issuer": "AHIF",
+            "date": "June 2025"
+        },
+        {
+            "title": "ICHAIR Young Scholar",
+            "issuer": "Nigerian Institute of Medical Research",
+            "date": "Dec 2024"
+        },
+        {
+            "title": "Best Department President",
+            "issuer": "Faculty of Science, Federal University Otuoke",
+            "date": "Dec 2022"
+        }
+    ]
+}

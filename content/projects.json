@@ -1,0 +1,66 @@
+[
+    {
+        "id": "global-health-security",
+        "title": "Global Health Security Preparedness: A Cross-National Assessment of Infectious Disease Burden and Response Capacity",
+        "description": "Constructed a composite Health Security Preparedness Index (HSPI) across 164 countries by normalizing workforce, statistical infrastructure, and health expenditure indicators alongside TB incidence.",
+        "tools": [
+            "Python",
+            "Pandas",
+            "Plotly",
+            "Quarto"
+        ],
+        "link": "https://github.com/ChijiokeUhegwu/Global_Health_Security_Preparedness",
+        "thumbnail": "/images/global-health-security.png"
+    },
+    {
+        "id": "onehealth-salmonella-amr",
+        "title": "One Health Resistome Profiling of Salmonella enterica Across Human, Animal, Food, and Environmental Sources",
+        "description": "Comparative genomic analysis of 320 S. enterica genomes curated from NCBI Pathogen Detection portal to characterize resistance determinants using AMRFinderPlus and hAMRonize.",
+        "tools": [
+            "R",
+            "Quarto",
+            "UseGalaxy",
+            "AMRFinderPlus",
+            "hAMRonize"
+        ],
+        "link": "https://github.com/ChijiokeUhegwu/OneHealth-Salmonella-AMR",
+        "thumbnail": "/images/salmonella-amr.png"
+    },
+    {
+        "id": "ecoli-onehealth-genomics",
+        "title": "One Health Comparative Genomics of Escherichia coli Isolates across Nine Nations (2018–2022)",
+        "description": "Reproducible genomic surveillance workflow tracing regional AMR burden, emerging genetic determinants, and transmission across environmental and host contexts.",
+        "tools": [
+            "Linux/Bash",
+            "R",
+            "Bioinformatics Pipelines"
+        ],
+        "link": "https://github.com/ChijiokeUhegwu/OHG_project",
+        "thumbnail": "/images/ecoli-genomics.png"
+    },
+    {
+        "id": "sars-cov-2-viralrecon",
+        "title": "Genomic Insights Into SARS-CoV-2: Mutation Patterns and Public Health Implications",
+        "description": "Processing raw SARS-CoV-2 sequencing data via nf-core/viralrecon workflow including quality control, alignment, variant calling, and consensus genome generation.",
+        "tools": [
+            "Nextflow",
+            "nf-core/viralrecon",
+            "R",
+            "Linux/Bash"
+        ],
+        "link": "https://github.com/ChijiokeUhegwu/viralrecon",
+        "thumbnail": "/images/viralrecon.jpg"
+    },
+    {
+        "id": "hiv-stigma-dhs-nigeria",
+        "title": "Assessing HIV Awareness, Prevention Practices, and Stigma in Nigeria",
+        "description": "Analyzed the 2018 Nigeria Demographic and Health Survey (DHS) datasets using descriptive and inferential statistics to evaluate demographic predictors of HIV stigma.",
+        "tools": [
+            "R",
+            "ggplot2",
+            "dplyr"
+        ],
+        "link": "https://github.com/ChijiokeUhegwu/rbb_final",
+        "thumbnail": "/images/hiv-dhs-study.jpg"
+    }
+]

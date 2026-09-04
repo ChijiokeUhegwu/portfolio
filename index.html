@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chijioke Christopher Uhegwu — Bioinformatician & Researcher</title>
+  <meta name="description" content="Portfolio of Chijioke Christopher Uhegwu — Bioinformatician specializing in Pathogen Genomics, Infectious Disease Epidemiology, and Global Health Security." />
+  <meta property="og:title" content="Chijioke Christopher Uhegwu — Bioinformatician & Researcher" />
+  <meta property="og:description" content="Pathogen Genomics, Infectious Disease Epidemiology, and Global Health Security." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0f1117" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Prevent theme flicker before paint -->
+  <script>
+    (function () {
+      try {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="nav">
+    <div class="nav__container">
+      <a href="#about" class="nav__brand" id="nav-brand">Chijioke Uhegwu</a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <nav class="nav__links" id="nav-links">
+        <a href="#about" class="nav__link is-active">About</a>
+        <a href="#publications" class="nav__link">Publications</a>
+        <a href="#projects" class="nav__link">Projects</a>
+        <a href="#experience" class="nav__link">Experience</a>
+        <a href="#education" class="nav__link">Education</a>
+        <a href="#workshops" class="nav__link">Workshops</a>
+        <a href="#awards" class="nav__link">Awards</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark / light theme" title="Toggle theme">
+          <span class="theme-toggle__icon" id="theme-icon">◐</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main id="main-content">
+    
+    <!-- Hero Section -->
+    <section class="hero section" id="about">
+      <div class="hero__head">
+        <img class="hero__photo" id="hero-photo" src="images/profile.png" alt="Chijioke Christopher Uhegwu" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'120\' fill=\'%23232838\'><rect width=\'120\' height=\'120\' rx=\'60\'/></svg>'" />
+        <div class="hero__id">
+          <p class="hero__eyebrow" id="hero-eyebrow">Bioinformatician · Pathogen Genomics · Global Health</p>
+          <h1 class="hero__title" id="hero-name">Chijioke Christopher Uhegwu</h1>
+        </div>
+      </div>
+      <p class="hero__lead" id="hero-lead">
+        Loading research background...
+      </p>
+      <div class="hero__social" id="hero-social">
+        <!-- Injected via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Skills & Focus Section -->
+    <section class="section reveal" id="skills-section">
+      <h2 class="section__title">Skills &amp; Methodologies</h2>
+      <div class="skills-grid" id="skills-container">
+        <!-- Injected via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="section reveal" id="publications">
+      <h2 class="section__title">Publications</h2>
+      <ul class="pub-list" id="publications-list">
+        <!-- Injected via JavaScript -->
+      </ul>
+      <p class="more">
+        <a href="https://scholar.google.com/citations?user=FtcUfAkAAAAJ&hl=en" target="_blank" rel="noopener" id="scholar-more-link">Complete list on Google Scholar →</a>
+      </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section reveal" id="projects">
+      <h2 class="section__title">Featured Projects</h2>
+      <div class="projects-grid" id="projects-grid">
+        <!-- Injected via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section reveal" id="experience">
+      <h2 class="section__title">Experience</h2>
+      <ol class="timeline" id="experience-timeline">
+        <!-- Injected via JavaScript -->
+      </ol>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section reveal" id="education">
+      <h2 class="section__title">Education</h2>
+      <ol class="timeline" id="education-timeline">
+        <!-- Injected via JavaScript -->
+      </ol>
+    </section>
+
+    <!-- Presentations and Workshops Section -->
+    <section class="section reveal" id="workshops">
+      <h2 class="section__title">Presentations &amp; Workshops</h2>
+      <div class="presentation-list" id="presentations-list">
+        <!-- Injected via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Awards and Honors Section -->
+    <section class="section reveal" id="awards">
+      <h2 class="section__title">Awards &amp; Fellowships</h2>
+      <div class="awards-grid" id="awards-grid">
+        <!-- Injected via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Professional Memberships Section -->
+    <section class="section reveal" id="memberships">
+      <h2 class="section__title">Memberships &amp; Affiliations</h2>
+      <div class="memberships-list" id="memberships-list">
+        <!-- Injected via JavaScript -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__links" id="footer-links">
+        <!-- Injected via JavaScript -->
+      </div>
+      <p class="footer__copy">© <span id="footer-year">2026</span> Chijioke Christopher Uhegwu · Built with pure HTML, CSS &amp; JavaScript.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
