@@ -1,6 +1,5 @@
 /* ===========================================================================
    Chijioke Christopher Uhegwu — Personal Portfolio Stylesheet
-   Minimalist academic & researcher aesthetic inspired by ahermann.org.
    Dark default, light theme via [data-theme="light"].
    Inter for body & UI, JetBrains Mono for monospace accents & metadata.
    =========================================================================== */
@@ -61,7 +60,9 @@
 }
 
 /* Base Reset */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -962,7 +963,8 @@ main {
     height: 88px;
   }
 
-  .projects-grid, .profdev-grid {
+  .projects-grid,
+  .profdev-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -978,7 +980,7 @@ main {
     flex-direction: column;
     gap: 0.35rem;
   }
-  
+
   .pub__year {
     min-width: auto;
   }
@@ -988,12 +990,17 @@ main {
   html {
     scroll-behavior: auto;
   }
+
   .reveal {
     opacity: 1;
     transform: none;
     transition: none;
   }
-  body, .project-card, .card, .btn {
+
+  body,
+  .project-card,
+  .card,
+  .btn {
     transition: none;
   }
 }
