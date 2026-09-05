@@ -141,7 +141,8 @@ a {
   color: var(--text);
 }
 
-.nav__link.is-active {
+.nav__link.is-active,
+.nav__link.active {
   color: var(--accent);
 }
 
@@ -186,6 +187,7 @@ main {
 .section {
   padding: 3.25rem 0;
   border-top: 1px solid var(--border);
+  scroll-margin-top: 4.5rem;
 }
 
 .section:first-of-type {

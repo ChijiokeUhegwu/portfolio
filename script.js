@@ -40,12 +40,134 @@ function initTheme() {
 }
 
 /* ==========================================================================
-   2. Responsive Navigation & Active Link Tracking
+   2. Responsive Navigation & Active Link Tracking (ScrollSpy & Hash Sync)
    ========================================================================== */
+const TRACKED_SECTION_IDS = ['about', 'skills-section', 'publications', 'projects', 'cv'];
+let isNavClickScrolling = false;
+let scrollLockTimeout = null;
+
+/**
+ * Set active class exclusively on the nav link corresponding to targetId
+ */
+function setActiveLink(targetId) {
+  if (!targetId) return;
+
+  // Normalize ID (e.g. skills-section maps to about, strip leading hash)
+  const cleanId = targetId.replace(/^#/, '').trim();
+  const normalizedId = (cleanId === 'skills-section' || cleanId === 'hero') ? 'about' : cleanId;
+
+  const links = document.querySelectorAll('.nav__link');
+  let matched = false;
+
+  links.forEach(link => {
+    const href = link.getAttribute('href') || '';
+    const linkTarget = href.replace(/^#/, '').trim();
+
+    if (linkTarget === normalizedId) {
+      link.classList.add('is-active', 'active');
+      link.setAttribute('aria-current', 'page');
+      matched = true;
+    } else {
+      link.classList.remove('is-active', 'active');
+      link.removeAttribute('aria-current');
+    }
+  });
+
+  // Fallback to first link (About) if nothing matched
+  if (!matched && links.length > 0 && normalizedId === 'about') {
+    links[0].classList.add('is-active', 'active');
+    links[0].setAttribute('aria-current', 'page');
+  }
+}
+
+/**
+ * Update the active navigation link based on current scroll position
+ */
+function updateActiveSectionOnScroll() {
+  if (isNavClickScrolling) return;
+
+  const scrollY = window.scrollY || window.pageYOffset;
+  const windowHeight = window.innerHeight;
+  const docHeight = document.documentElement.scrollHeight;
+
+  // 1. Scrolled to or near the bottom of page -> activate CV
+  if (windowHeight + scrollY >= docHeight - 80) {
+    setActiveLink('cv');
+    return;
+  }
+
+  // 2. Near top of page -> activate About
+  if (scrollY < 120) {
+    setActiveLink('about');
+    return;
+  }
+
+  // 3. Find currently visible section by vertical bounds
+  const triggerLine = 140; // Pixels below top of viewport for trigger point
+  let activeSectionId = null;
+
+  for (const id of TRACKED_SECTION_IDS) {
+    const section = document.getElementById(id);
+    if (!section) continue;
+
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= triggerLine && rect.bottom > triggerLine) {
+      activeSectionId = id;
+      break;
+    }
+  }
+
+  // Fallback: Pick section closest to trigger line
+  if (!activeSectionId) {
+    let closestId = null;
+    let minDiff = Infinity;
+
+    for (const id of TRACKED_SECTION_IDS) {
+      const section = document.getElementById(id);
+      if (!section) continue;
+
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= triggerLine) {
+        const diff = triggerLine - rect.top;
+        if (diff < minDiff) {
+          minDiff = diff;
+          closestId = id;
+        }
+      }
+    }
+    activeSectionId = closestId || 'about';
+  }
+
+  setActiveLink(activeSectionId);
+}
+
+/**
+ * Synchronize nav state with URL hash
+ */
+function syncWithUrlHash() {
+  const rawHash = window.location.hash;
+  if (rawHash && rawHash.length > 1) {
+    const hashId = rawHash.replace(/^#/, '').trim();
+    const validIds = ['about', 'skills-section', 'publications', 'projects', 'cv'];
+    if (validIds.includes(hashId)) {
+      setActiveLink(hashId);
+      const targetEl = document.getElementById(hashId);
+      if (targetEl) {
+        setTimeout(() => {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }, 60);
+      }
+      return;
+    }
+  }
+  updateActiveSectionOnScroll();
+}
+
 function initNavigation() {
   const navToggle = document.getElementById('nav-toggle');
   const navLinks = document.getElementById('nav-links');
   const links = document.querySelectorAll('.nav__link');
+  const navBrand = document.getElementById('nav-brand');
 
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => {
@@ -53,45 +175,73 @@ function initNavigation() {
       navToggle.setAttribute('aria-expanded', isOpen);
     });
 
-    // Close menu when clicking outside or clicking any nav link
+    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
       if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
         navLinks.classList.remove('open');
         navToggle.setAttribute('aria-expanded', 'false');
       }
     });
+  }
 
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
+  // Handle clicking nav links
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (navLinks) navLinks.classList.remove('open');
+      if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        const targetId = href.substring(1);
+        setActiveLink(targetId);
+
+        // Lock scrollspy during smooth scroll animation
+        isNavClickScrolling = true;
+        if (scrollLockTimeout) clearTimeout(scrollLockTimeout);
+        scrollLockTimeout = setTimeout(() => {
+          isNavClickScrolling = false;
+        }, 850);
+      }
+    });
+  });
+
+  // Handle clicking brand link
+  if (navBrand) {
+    navBrand.addEventListener('click', () => {
+      if (navLinks) navLinks.classList.remove('open');
+      if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+      setActiveLink('about');
+
+      isNavClickScrolling = true;
+      if (scrollLockTimeout) clearTimeout(scrollLockTimeout);
+      scrollLockTimeout = setTimeout(() => {
+        isNavClickScrolling = false;
+      }, 850);
     });
   }
 
-  // Active section observer for nav link highlights
-  const trackedSections = document.querySelectorAll('section#about, section#publications, section#projects, section#cv');
-  if ('IntersectionObserver' in window && trackedSections.length > 0) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          links.forEach(l => {
-            if (l.getAttribute('href') === `#${id}`) {
-              l.classList.add('is-active');
-            } else {
-              l.classList.remove('is-active');
-            }
-          });
-        }
+  // Throttled scroll listener using requestAnimationFrame
+  let isScrollTicking = false;
+  window.addEventListener('scroll', () => {
+    if (!isScrollTicking) {
+      window.requestAnimationFrame(() => {
+        updateActiveSectionOnScroll();
+        isScrollTicking = false;
       });
-    }, {
-      rootMargin: '-20% 0px -60% 0px',
-      threshold: 0.1
-    });
+      isScrollTicking = true;
+    }
+  }, { passive: true });
 
-    trackedSections.forEach(sec => observer.observe(sec));
-  }
+  // Hash change listener
+  window.addEventListener('hashchange', () => {
+    const hashId = window.location.hash.replace(/^#/, '').trim();
+    if (hashId) {
+      setActiveLink(hashId);
+    }
+  });
+
+  // Initial sync on page load
+  syncWithUrlHash();
 }
 
 /* ==========================================================================
@@ -156,6 +306,9 @@ async function loadAllContent() {
     renderMemberships(profileData.memberships);
 
     renderFooter(profileData);
+
+    // Re-sync active nav link after content hydration expands sections
+    syncWithUrlHash();
 
   } catch (error) {
     console.error('Error loading portfolio data:', error);
