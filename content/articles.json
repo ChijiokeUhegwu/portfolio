@@ -1,12 +1,12 @@
 [
     {
-        "id": "gmo-pesticide-sub-saharan-africa",
-        "year": 2026,
-        "title": "Genetically Modified Crops as a Strategy for Reducing Pesticide Dependence in Sub-Saharan Africa: Exploring Benefits, Adoption Constraints and Policies",
-        "authors": "Uhegwu, C. C., & Anumudu, C. K.",
-        "journal": "Biology and Life Sciences Forum",
-        "volume_details": "Vol. 54, No. 1, p. 32. MDPI",
-        "link": "https://doi.org/10.3390/blsf2026054032"
+        "id": "environmental-amr-food-safety",
+        "year": 2024,
+        "title": "Environmental Antimicrobial Resistance: Implications for Food Safety and Public Health",
+        "authors": "Ifedinezi, O. V., Nnaji, N. D., Anumudu, C. K., Ekwueme, C. T., Uhegwu, C. C., Ihenetu, F. C., Obioha, P. L., Simon, B. O., Ezechukwu, P. S., & Onyeaka, H.",
+        "journal": "Antibiotics",
+        "volume_details": "13(11), 1087",
+        "link": "https://doi.org/10.3390/antibiotics13111087"
     },
     {
         "id": "transcriptomic-retina-5xfad-ad",
@@ -54,12 +54,12 @@
         "link": "https://doi.org/10.3390/app15095219"
     },
     {
-        "id": "environmental-amr-food-safety",
-        "year": 2024,
-        "title": "Environmental Antimicrobial Resistance: Implications for Food Safety and Public Health",
-        "authors": "Ifedinezi, O. V., Nnaji, N. D., Anumudu, C. K., Ekwueme, C. T., Uhegwu, C. C., Ihenetu, F. C., Obioha, P. L., Simon, B. O., Ezechukwu, P. S., & Onyeaka, H.",
-        "journal": "Antibiotics",
-        "volume_details": "13(11), 1087",
-        "link": "https://doi.org/10.3390/antibiotics13111087"
+        "id": "gmo-pesticide-sub-saharan-africa",
+        "year": 2026,
+        "title": "Genetically Modified Crops as a Strategy for Reducing Pesticide Dependence in Sub-Saharan Africa: Exploring Benefits, Adoption Constraints and Policies",
+        "authors": "Uhegwu, C. C., & Anumudu, C. K.",
+        "journal": "Biology and Life Sciences Forum",
+        "volume_details": "Vol. 54, No. 1, p. 32. MDPI",
+        "link": "https://doi.org/10.3390/blsf2026054032"
     }
 ]
